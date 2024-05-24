@@ -3,23 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>php</title>
     <style>
         body{
             background-color: #4d87e3;
             font-family: verdana, sans-serif;
         }
-        h4{
+        h4, label{
             color: white;
         }
     </style>
 </head>
 <body>
-  
+  <form action="index.php" method="post" name="form">
+    <div>
+        <label for="name">Enter your name: </label>
+        <input type="text" name="username">
+    </div>
+    <br>
+    <div>
+        <label for="name">Enter your E-mail: </label>
+        <input type="text" name="mail">
+    </div>
+    <button>Log in</button>
+  </form>
 </body>
 </html>
 
 <?php
+
+
+    if(isset($_POST['username']) && !empty($_POST['username']) && isset($_POST['mail']) && !empty($_POST['mail'])){
+        $name = htmlspecialchars($_POST['username']);
+        $email = htmlspecialchars($_POST['mail']);
+        echo "User Name: " . $name . "<br>";
+        echo "User Mail: " . $email . "<br>";
+    }
+
     //Problem 1.
     function evenOdd($num){
         if($num % 2 == 0){
@@ -141,4 +161,6 @@
     }
     $pass = array(2, 3, 5, 7, 11, 13);
     echo doubleMake($pass);
+
+
 ?>
