@@ -157,10 +157,17 @@
         $doubleArray = doubleNum($caught);
         echo "Double of above values: " . $doubleArray . "<br>"; 
         $tenPlusArray = addTen($caught);
-        echo "Added Ten of above values: " . $tenPlusArray; 
+        echo "Added Ten of above values: " . $tenPlusArray . "<br>"; 
     }
     $pass = array(2, 3, 5, 7, 11, 13);
     echo doubleMake($pass);
 
-
+    function arrayValue(){
+        $marks = [96, 65, 93, 76, 54, 67, 76];
+        $marksLen = sizeof($marks);
+        for($i = 0; $i < $marksLen; $i++){
+            echo $marks[$i] . ":" . "index" . $i . "<br>";
+        }
+    }
+    arrayValue();
 ?>
